@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/shaanjain/Downloads/ENGSCI/FIRST YEAR/SEM 2/esc190/labs/lab05/main'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _create_AL_from_data, symObjAddr: 0x0, symBinAddr: 0x100003A94, symSize: 0xC0 }
+  - { offsetInCU: 0x8A, offset: 0x8A, size: 0x8, addend: 0x0, symName: _create_AL_from_data, symObjAddr: 0x0, symBinAddr: 0x100003A94, symSize: 0xC0 }
+  - { offsetInCU: 0xE6, offset: 0xE6, size: 0x8, addend: 0x0, symName: _AL_append, symObjAddr: 0xC0, symBinAddr: 0x100003B54, symSize: 0x9C }
+  - { offsetInCU: 0x118, offset: 0x118, size: 0x8, addend: 0x0, symName: _AL_insert, symObjAddr: 0x15C, symBinAddr: 0x100003BF0, symSize: 0xE4 }
+  - { offsetInCU: 0x158, offset: 0x158, size: 0x8, addend: 0x0, symName: _AL_delete, symObjAddr: 0x240, symBinAddr: 0x100003CD4, symSize: 0x7C }
+  - { offsetInCU: 0x18A, offset: 0x18A, size: 0x8, addend: 0x0, symName: _AL_free, symObjAddr: 0x2BC, symBinAddr: 0x100003D50, symSize: 0x30 }
+  - { offsetInCU: 0x1AE, offset: 0x1AE, size: 0x8, addend: 0x0, symName: _AL_get, symObjAddr: 0x2EC, symBinAddr: 0x100003D80, symSize: 0x2C }
+  - { offsetInCU: 0x1F2, offset: 0x1F2, size: 0x8, addend: 0x0, symName: _print_list, symObjAddr: 0x318, symBinAddr: 0x100003DAC, symSize: 0x84 }
+  - { offsetInCU: 0x232, offset: 0x232, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x39C, symBinAddr: 0x100003E30, symSize: 0x10C }
+...

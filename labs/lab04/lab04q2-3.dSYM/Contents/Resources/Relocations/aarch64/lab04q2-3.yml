@@ -1,0 +1,10 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/shaanjain/Downloads/ENGSCI/FIRST YEAR/SEM 2/esc190/labs/lab04/lab04q2-3'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _my_atof, symObjAddr: 0x0, symBinAddr: 0x100003BC0, symSize: 0x180 }
+  - { offsetInCU: 0x42, offset: 0x42, size: 0x8, addend: 0x0, symName: _my_atof, symObjAddr: 0x0, symBinAddr: 0x100003BC0, symSize: 0x180 }
+  - { offsetInCU: 0xA2, offset: 0xA2, size: 0x8, addend: 0x0, symName: _parse_consts, symObjAddr: 0x180, symBinAddr: 0x100003D40, symSize: 0x118 }
+  - { offsetInCU: 0x111, offset: 0x111, size: 0x8, addend: 0x0, symName: _change_name, symObjAddr: 0x298, symBinAddr: 0x100003E58, symSize: 0x20 }
+  - { offsetInCU: 0x143, offset: 0x143, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x2B8, symBinAddr: 0x100003E78, symSize: 0x8C }
+...
