@@ -151,9 +151,9 @@ int main() {
     double *best;
     int *path;
 
-    read_in_img(&im, "HJoceanSmall.bin");
+    read_in_img(&im, "pruners.bin");
     
-    for(int i = 0; i < 450; i++){
+    for(int i = 0; i < 150; i++){
         printf("i = %d\n", i);
         calc_energy(im,  &grad);
         dynamic_seam(grad, &best);
