@@ -1,52 +1,101 @@
-from LinkedLists import LL, Node
+#Question 1
+import LinkedLists as LL
+class LL:
+   def __init__(self):
+       self.head = None
 
-def are_nodes_linked(node1, node2):
-    return node1.neighbours.contains(node2)  # Check if node2 is a neighbour of node1
 
-def get_node_by_str(nodes, node_str):
-    for node in nodes:
-        if node.value == node_str:
-            return node  # Return the node with the given value
-    return None
 
-def are_airports_linked(airports, airport1_str, airport2_str):
-    airport1 = get_node_by_str(airports, airport1_str)
-    airport2 = get_node_by_str(airports, airport2_str)
-    if airport1 is None or airport2 is None:
-        return False  # If either airport is not found, return False
-    return are_nodes_linked(airport1, airport2)  # Check if the airports are linked
 
-def make_airport_graph1():
-    airports = LL()
+   def insert(self, loc, element):
+       new_node = Node(element)  # data: element, next: None
+       if loc == 0:
+           new_node.next = self.head
+           self.head = new_node
+       else:
+           cur = self.head
+           for i in range(loc-1):
+               cur = cur.next
+           new_node.next = cur.next
+           cur.next = new_node
+       
+   def delete(self, loc):
+       if loc == 0:
+           self.head = self.head.next 
+       else:
+           cur = self.head
+           for i in range(loc-1):
+               cur = cur.next
+           # cur is the node before the node that we want to delete
+           cur.next = cur.next.next
 
-    yyz = LL()
-    yyz.insert(0, "YYZ")
-    yyz.insert(1, "YVR")
-    yyz.insert(2, "YUL")
 
-    yvr = LL()
-    yvr.insert(0, "YVR")
-    yvr.insert(1, "YYZ")
-    yvr.insert(2, "YUL")
-    yvr.insert(3, "Whitehorse")
 
-    yul = LL()
-    yul.insert(0)
 
-    yul = Node("YUL")
-    whitehorse = Node("Whitehorse")
+class Node:
+   def __init__(self, data):
+       self.data = data
+       self.next = None
 
-    yyz.neighbours = set([yvr, yul])  # Set the neighbours of YYZ
-    yvr.neighbours = set([yyz, yul, whitehorse])  # Set the neighbours of YVR
-    yul.neighbours = set([yyz, yvr])  # Set the neighbours of YUL
-    whitehorse.neighbours = set([yvr])  # Set the neighbours of Whitehorse
 
-    airport_dict = {}
-    for airport in [yyz, yvr, yul, whitehorse]:
-        airport_dict[airport.value] = airport  # Create a dictionary with airport values as keys
 
-    return airport_dict
 
-if __name__ == '__main__':
-    airports = make_airport_graph1()
-    print("Toronto (YYZ) is connected to Montreal (YUL)?", are_airports_linked(airports, "YYZ", "YUL"))
+
+
+# def get_neighbours(Link):
+#     neigh = []
+#     if Link.head == None:
+#         return neigh
+#     else:
+#         neigh.append(Link.head.data)
+#         point = Link.head.next
+#         while point.next != None:
+#             neigh.append(point.data)
+#             point = point.next
+
+
+def are_linked(Link1, Link2):
+   Node1 = Link1.head.data
+   point = Link2.head.next
+   while point != None:
+       if Node1 == point.data:
+           return True
+       else:
+           point = point.next
+   if point == Node1:
+       return True
+   return False
+   
+if __name__ == "__main__":
+   Node1 = Node(1)
+   Node2 = Node(2)
+   Node3 = Node(3)
+   Node4 = Node(4)
+
+
+   Link = LL()
+   Link.insert(0, Node1)
+   Link.insert(1, Node3)
+   Link.insert(2, Node4)
+   Link.insert(3, Node2)
+
+
+   Link2 = LL()
+   Link2.insert(0,Node2)
+   Link2.insert(1,Node3)
+   Link2.insert(2, Node1)
+
+
+   Link3 = LL()
+   Link3.insert(0,Node3)
+   Link3.insert(1,Node2)
+   Link3.insert(2, Node1)
+
+
+   Link4 = LL()
+   Link4.insert(0,Node4)
+   Link4.insert(1, Node1)
+
+
+   print(are_linked(Link, Link2))
+   print(are_linked(Link2, Link4))
